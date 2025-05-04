@@ -25,21 +25,29 @@ const questions = [
     "Waktu kita pertama kali jalan bareng, apa hal yang paling kamu perhatiin dari aku?",
 ];
 
-let questionIndex = 0;
+let usedQuestions = [];
+let currentIndex = 0;
 
 function generateQuestion() {
-    if (questionIndex < questions.length) {
-        const question = questions[questionIndex];
-        document.getElementById('questionDisplay').innerHTML = question;
-        questionIndex++;
+  const questionDisplay = document.getElementById('questionDisplay');
+  const questionImage = document.getElementById('questionImage');
+  const button = document.querySelector('button');
 
-        // Menampilkan gambar setelah pertanyaan
-        const imagesContainer = document.querySelector('.images-container');
-        imagesContainer.style.display = "block"; // Menampilkan bagian gambar
-    } else {
-        // Jika sudah 24 pertanyaan
-        document.getElementById('questionDisplay').innerHTML = "YEYYY pertanyaan udah selesaiii, semogaa kamu dan aku sama2 inget momen2 manis kita dluu, seruu kann rasanyaa, semogaa kita bisa jalanin hubungan inii sampe punya cicit2 gemeyy yaa sayangkuuu❤️❤️";
-        // Disable tombol agar tidak bisa generate lagi
-        document.getElementById('generateBtn').disabled = true;
-    }
+  if (currentIndex >= questions.length) {
+    questionDisplay.innerHTML = "YEYYY pertanyaan udah selesaiii, semogaa kamu dan aku sama2 inget momen2 manis kita dluu, seruu kann rasanyaa, semogaa kita bisa jalanin hubungan inii sampe punya cicit2 gemeyy yaa sayangkuuu❤️❤️";
+    questionImage.style.display = "none";
+    button.disabled = true;
+    button.style.backgroundColor = "#aaa";
+    return;
+  }
+
+  const question = questions[currentIndex];
+  questionDisplay.innerHTML = question;
+
+  // Hitung index gambar (0–15), lalu +1 biar jadi img1 sampai img16
+  const imageIndex = (currentIndex % 16) + 1;
+  questionImage.src = `images/img${imageIndex}.jpg`;
+  questionImage.style.display = "block";
+
+  currentIndex++;
 }
