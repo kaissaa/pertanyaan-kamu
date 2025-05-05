@@ -31,14 +31,19 @@ function generateQuestion() {
   const button = document.querySelector('button');
 
   if (currentIndex >= questions.length) {
-    questionDisplay.innerHTML = "YEYYY pertanyaan udah selesaiii, semogaa kamu dan aku sama2 inget momen2 manis kita dluu, seruu kann rasanyaa, semogaa kita bisa jalanin hubungan inii sampe punya cicit2 gemeyy yaa sayangkuuu❤️❤️";
+    questionDisplay.innerHTML = "YEYYY pertanyaan udah selesaiii...";
     questionImage.style.display = "none";
     button.disabled = true;
     button.style.backgroundColor = "#aaa";
+  
     const audioContainer = document.getElementById('audioContainer');
     audioContainer.style.display = "block";
+  
+    const audio = document.getElementById('endingAudio');
+    audio.play(); // hanya diputar setelah semua pertanyaan selesai
     return;
   }
+  
 
   const question = questions[currentIndex];
   questionDisplay.innerHTML = question;
