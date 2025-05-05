@@ -1,5 +1,5 @@
 const questions = [
-    "Jika diberi pilihan untuk siapa saja di dunia, siapa yang ingin kamu jadikan tamu makan malam?",
+    "Kamu punya pengalaman yg memalukan gaa di hidup kamu?",
     "Apakah kamu ingin menjadi terkenal? Dalam hal apa?",
     "Sebelum teleponan, kamu pernah gasi latihan dulu tentang apa yang akan pgn kmu bilang? Kenapa?",
     "Apa yang akan membuat hari kamu menjadi 'sempurna'?",
@@ -44,7 +44,6 @@ function generateQuestion() {
   const question = questions[currentIndex];
   questionDisplay.innerHTML = question;
 
-  // Hitung index gambar (0–15), lalu +1 biar jadi img1 sampai img16
   const imageIndex = (currentIndex % 16) + 1;
   questionImage.src = `images/img${imageIndex}.jpg`;
   questionImage.style.display = "block";
