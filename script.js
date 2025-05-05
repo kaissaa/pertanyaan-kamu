@@ -38,7 +38,6 @@ function generateQuestion() {
     const audioContainer = document.getElementById('audioContainer');
     audioContainer.style.display = "block";
     return;
-    return;
   }
 
   const question = questions[currentIndex];
