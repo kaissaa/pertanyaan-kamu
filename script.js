@@ -35,6 +35,9 @@ function generateQuestion() {
     questionImage.style.display = "none";
     button.disabled = true;
     button.style.backgroundColor = "#aaa";
+    const audioContainer = document.getElementById('audioContainer');
+    audioContainer.style.display = "block";
+    return;
     return;
   }
 
