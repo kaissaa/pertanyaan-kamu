@@ -31,7 +31,7 @@ function generateQuestion() {
   const button = document.querySelector('button');
 
   if (currentIndex >= questions.length) {
-    questionDisplay.innerHTML = "YEYYY pertanyaan udah selesaiii...";
+    questionDisplay.innerHTML = "YEYYY pertanyaan udah selesaiii, semogaa kamu dan aku sama2 inget momen2 manis kita dluu, seruu kann rasanyaa, semogaa kita bisa jalanin hubungan inii sampe punya cicit2 gemeyy yaa sayangkuuu❤️❤️";
     questionImage.style.display = "none";
     button.disabled = true;
     button.style.backgroundColor = "#aaa";
